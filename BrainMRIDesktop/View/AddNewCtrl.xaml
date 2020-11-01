@@ -1,0 +1,170 @@
+﻿<UserControl x:Class="BrainMRIDesktop.AddNewCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:BrainMRIDesktop"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="760">
+
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="460"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Button 
+                Background="#35997F"
+                Height="40"
+                Width="12"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="21 30"
+                Cursor="Hand"
+                Click="FirstImageTab_Click"
+                Name="btnPrimary"
+                >
+            </Button>
+            <Button 
+                Background="#35997F"
+                Height="40"
+                Width="12"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="21 75"
+                Cursor="Hand"
+                Click="SecondImageTab_Click"
+                Opacity="0.5"
+                Name="btnSecondary"
+                >
+            </Button>
+            
+            
+            <Grid Name="imageGridSecondary">
+
+            </Grid>
+            <Grid Name="imageGridPrimary">
+
+            </Grid>
+            
+        </Grid>
+        
+        <!--<local:ImageCtrl/>-->
+
+       
+        
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="460"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="0 40"
+                  >
+
+            <Label FontSize="12" 
+                   FontWeight="Bold" 
+                   Content="Вік (в повних роках):" 
+                   HorizontalAlignment="Left" 
+                   Margin="0,0" 
+                   VerticalAlignment="Top"/>
+
+            <TextBox 
+                    HorizontalAlignment="Left" 
+                    Height="30" 
+                    Margin="0,25" 
+                    TextWrapping="Wrap" 
+                    BorderThickness="1"
+                    VerticalAlignment="Top" 
+                    BorderBrush="#E5E5E5"
+                    Padding="10 0"
+                    Width="230"
+                    Name="AgeTxtBox"
+                    />
+
+            <Label FontSize="12" 
+                   FontWeight="Bold" 
+                   Content="Стать:" 
+                   HorizontalAlignment="Left" 
+                   Margin="0, 60"
+                   Height="30"
+                   VerticalAlignment="Top"/>
+
+            <RadioButton 
+                    Content="Чол." 
+                    FontSize="12"
+                    HorizontalAlignment="Left" 
+                    Margin="0, 85"
+                    VerticalAlignment="Top"
+                    Background="Black"
+                    Name="maleRadio"
+                    />
+            <RadioButton 
+                    Content="Жін." 
+                    FontSize="12"
+                    HorizontalAlignment="Left" 
+                    Margin="60, 85" 
+                    VerticalAlignment="Top"
+                    Background="Black"
+                    Name="femaleRadio"
+                    />
+
+            <Label FontSize="12" 
+                   FontWeight="Bold" 
+                   Content="Дата обстеження:" 
+                   HorizontalAlignment="Left" 
+                   Margin="0, 110"
+                   Height="30"
+                   VerticalAlignment="Top"/>
+
+            <Rectangle
+                Margin="0,135" 
+                VerticalAlignment="Top"
+                Height="30"
+                Stroke="#E5E5E5"
+                Width="230"
+                HorizontalAlignment="Left"
+                    />
+
+
+            <DatePicker 
+                    Margin="20,136,75,0" 
+                    VerticalAlignment="Top"
+                    Height="27"
+                    BorderThickness="0"
+                    BorderBrush="#333"
+                    Name="checkDatePicker"
+                    />
+
+
+            <Button Content="Зберегти" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom" 
+                    Width="142"
+                    Background="#35586C"
+                    Foreground="White" 
+                    Click="SaveBtn_Click"
+                    />
+            <!--Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"-->
+
+            <Button Content="Відмінити" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom" 
+                    Width="100"
+                    Margin="147,0,0,0"
+                    Foreground="Gray"
+                    Background="Transparent"
+                    BorderBrush="Transparent"   
+                    Click="CancelBtn_Click"
+                    />
+
+        </Grid>
+        </Grid>
+
+
+    </Grid>
+
+</UserControl>
